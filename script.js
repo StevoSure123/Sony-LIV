@@ -5,7 +5,7 @@ let currentGroup = 'all';
 let searchQuery = '';
 
 // Fetch the local M3U playlist
-fetch('M3UPlus-Playlist-20241019222427.m3u')
+fetch('sony-liv.m3u')
     .then(response => response.ok ? response.text() : Promise.reject(response.statusText))
     .then(data => {
         channels = parseM3U(data);
