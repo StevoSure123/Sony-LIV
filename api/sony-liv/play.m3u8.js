@@ -28,8 +28,12 @@ export default async function handler(req, res) {
     // Parse the M3U8 data as text
     const m3u8Data = await response.text();
 
-    // Set the response header to indicate it's an M3U8 playlist
+    // Set CORS headers to allow the browser to handle the file
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
+    
+    // Optionally, add more headers for caching or other settings
+    // res.setHeader('Cache-Control', 'no-cache'); // for non-caching
 
     // Send the M3U8 data as the response
     res.status(200).send(m3u8Data);
