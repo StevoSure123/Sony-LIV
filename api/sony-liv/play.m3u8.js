@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     // Fetch the M3U8 playlist from the original URL
     const response = await fetch(originalUrl, {
       headers: {
-        Referer: "RANAPK", // Ensure the Referer header is correct
+        Referer: "RANAPK", // Correct referer to avoid fetch blocking
       },
     });
 
@@ -28,20 +28,32 @@ export default async function handler(req, res) {
     // Parse the M3U8 data as text
     const m3u8Data = await response.text();
 
-    // Set CORS headers to allow the browser to handle the file
+    // Optimize CORS and caching headers
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-    
-    // Optionally, add more headers for caching or other settings
-    // res.setHeader('Cache-Control', 'no-cache'); // for non-caching
+    res.setHeader("Cache-Control", "public, max-age=5"); // Cache for 5 seconds for better performance
 
-    // Send the M3U8 data as the response
+    // Preload related media segments (for reducing buffering)
+    const preloadedSegments = m3u8Data
+      .split("\n")
+      .filter(line => line.endsWith(".ts")) // Fetch .ts files
+      .map(segmentUrl =>
+        fetch(new URL(segmentUrl, originalUrl).toString(), {
+          headers: { Referer: "RANAPK" },
+        }).catch(err => console.error("Preload error:", err))
+      );
+
+    // Wait for preloading to complete (non-blocking)
+    Promise.all(preloadedSegments)
+      .then(() => console.log("Segments preloaded"))
+      .catch(err => console.error("Error preloading segments:", err));
+
+    // Send the M3U8 playlist as the response
     res.status(200).send(m3u8Data);
   } catch (error) {
-    // Log the error for debugging purposes
     console.error("Error in M3U8 handler:", error);
-
-    // Respond with a 500 internal server error and error details
     res.status(500).json({ error: "Internal server error." });
   }
 }
