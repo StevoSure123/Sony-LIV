@@ -6,12 +6,12 @@ export default async function handler(req, res) {
     return;
   }
 
-  const originalUrl = https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id};
+  const originalUrl = `https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id}`;
 
   try {
     const response = await fetch(originalUrl, {
       headers: {
-        Referer: "RANAPK", // Add the required Referer header
+        Referer: "RANAPK", // Required Referer header
       },
     });
 
