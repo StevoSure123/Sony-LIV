@@ -1,40 +1,40 @@
 #EXTM3U
 
-#EXTINF:-1 group-title="General Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sony_SAB_logo.svg/1200px-Sony_SAB_logo.svg.png",SONY SAB
+#EXTINF:-1 tvg-id="109953" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDSAB.png" group-title="Sony",SONY SAB
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=109953
 
-#EXTINF:-1 group-title="General Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Sony_Aath_logo.svg/1200px-Sony_Aath_logo.svg.png",SONY AATH
+#EXTINF:-1 tvg-id="245989" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDAATH.png" group-title="Sony",SONY AATH
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=245989
 
-#EXTINF:-1 group-title="General Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sony_PAL_logo.svg/1200px-Sony_PAL_logo.svg.png",SONY PAL
+#EXTINF:-1 tvg-id="104192" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDPAL.png" group-title="Sony",SONY PAL
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=104192
 
-#EXTINF:-1 group-title="General Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sony_Yay_logo.svg/1200px-Sony_Yay_logo.svg.png",SONY YAY
+#EXTINF:-1 tvg-id="245959" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDYAY.png" group-title="Sony",SONY YAY
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=245959
 
-#EXTINF:-1 group-title="General Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sony_Entertainment_Television_logo.svg/1200px-Sony_Entertainment_Television_logo.svg.png",SONY ENTERTAINMENT TELEVISION (SET)
+#EXTINF:-1 tvg-id="66164" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDSET.png" group-title="Sony",SONY ENTERTAINMENT TELEVISION (SET)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=66164
 
-#EXTINF:-1 group-title="Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sony_Max_HD_logo.svg/1200px-Sony_Max_HD_logo.svg.png",SONY MAX HD
+#EXTINF:-1 tvg-id="66179" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDMAXHD.png" group-title="Sony",SONY MAX HD
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=66179
 
-#EXTINF:-1 group-title="Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Sony_Wah_logo.svg/1200px-Sony_Wah_logo.svg.png",SONY WAH
+#EXTINF:-1 tvg-id="112979" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDWAH.png" group-title="Sony",SONY WAH
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=112979
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Sony_TEN_1_logo.svg/1200px-Sony_TEN_1_logo.svg.png",SONY TEN 1 (HD)
+#EXTINF:-1 tvg-id="167570" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDTEN1.png" group-title="Sony",SONY TEN 1 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167570
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Sony_TEN_2_logo.svg/1200px-Sony_TEN_2_logo.svg.png",SONY TEN 2 (HD)
+#EXTINF:-1 tvg-id="167571" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDTEN2.png" group-title="Sony",SONY TEN 2 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167571
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Sony_TEN_3_logo.svg/1200px-Sony_TEN_3_logo.svg.png",SONY TEN 3 (HD)
+#EXTINF:-1 tvg-id="167572" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDTEN3.png" group-title="Sony",SONY TEN 3 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167572
 
-#EXTINF:-1 group-title="Nature & Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sony_BBC_Earth_logo.svg/1200px-Sony_BBC_Earth_logo.svg.png",SONY BBC EARTH (HD)
+#EXTINF:-1 tvg-id="381102" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDBBCEARTH.png" group-title="Sony",SONY BBC EARTH (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=381102
 
-#EXTINF:-1 group-title="Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sony_MAX_2_logo.svg/1200px-Sony_MAX_2_logo.svg.png",SONY MAX 2
+#EXTINF:-1 tvg-id="66189" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDMAX2.png" group-title="Sony",SONY MAX 2
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=66189
 
-#EXTINF:-1 group-title="Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sony_PIX_logo.svg/1200px-Sony_PIX_logo.svg.png",SONY PIX (HD)
+#EXTINF:-1 tvg-id="109966" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HDPIX.png" group-title="Sony",SONY PIX (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=109966
