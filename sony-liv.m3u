@@ -21,20 +21,20 @@ https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=66179
 #EXTINF:-1 tvg-id="112979" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Wah.png" group-title="Movies",SONY WAH
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=112979
 
-#EXTINF:-1 tvg-id="167570" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_TEN1_HD.png" group-title="Sports",SONY TEN 1 (HD)
+#EXTINF:-1 tvg-id="167570" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-SPORTS-TEN-1-HD-Transparent.png" group-title="Sports",SONY TEN 1 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167570
 
-#EXTINF:-1 tvg-id="167571" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_TEN2_HD.png" group-title="Sports",SONY TEN 2 (HD)
+#EXTINF:-1 tvg-id="167571" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-SPORTS-TEN-2-HD-Transparent.png" group-title="Sports",SONY TEN 2 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167571
 
-#EXTINF:-1 tvg-id="167572" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_TEN3_HD.png" group-title="Sports",SONY TEN 3 (HD)
+#EXTINF:-1 tvg-id="167572" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-SPORTS-TEN-3-HD-Transparent.png" group-title="Sports",SONY TEN 3 (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=167572
 
-#EXTINF:-1 tvg-id="381102" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_EARTH_HD.png" group-title="Nature",SONY BBC EARTH (HD)
+#EXTINF:-1 tvg-id="381102" tvg-logo="http://b1gchlogos.xyz/wp-content/uploads/2023/08/SONY-BBC-Earth-HD.png" group-title="Nature",SONY BBC EARTH (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=381102
 
 #EXTINF:-1 tvg-id="66189" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_MAX2.png" group-title="Movies",SONY MAX 2
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=66189
 
-#EXTINF:-1 tvg-id="109966" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_PIX_HD.png" group-title="Movies",SONY PIX (HD)
+#EXTINF:-1 tvg-id="109966" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-PIX-HD-Transparent.png" group-title="Movies",SONY PIX (HD)
 https://unknown-playlists-sony-liv.vercel.app/sony-liv/play.m3u8?id=109966
