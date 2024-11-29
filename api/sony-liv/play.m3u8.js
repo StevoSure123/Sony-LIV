@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       return;
     }
 
-    const originalUrl = https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id};
+    const originalUrl = `https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id}`;
 
     // Fetch the M3U8 playlist from the original URL
     const response = await fetch(originalUrl, {
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     // If the fetch fails
     if (!response.ok) {
       res.status(response.status).json({
-        error: Failed to fetch M3U8 from original URL: ${response.statusText},
+        error: `Failed to fetch M3U8 from original URL: ${response.statusText}`,
       });
       return;
     }
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
         }).catch(err => console.error("Preload error:", err))
       );
 
-    // Wait for preloading to complete (non-blocking)
+    // Wait for preloading to complete (non-blocking, or use await if blocking is needed)
     Promise.all(preloadedSegments)
       .then(() => console.log("Segments preloaded"))
       .catch(err => console.error("Error preloading segments:", err));
