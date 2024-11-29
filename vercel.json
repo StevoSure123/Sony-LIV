@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/play.m3u8", "destination": "/api/play.m3u8" },
-    { "source": "/ts/:segment*", "destination": "/api/ts" }
+    { "source": "/play.m3u8", "destination": "/api/play.m3u8" }
   ]
 }
