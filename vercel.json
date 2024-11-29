@@ -1,8 +1,6 @@
 {
-  "routes": [
-    {
-      "src": "/sony-liv/play.m3u8",
-      "dest": "/api/sony-liv/play.m3u8.js"
-    }
+  "rewrites": [
+    { "source": "/play.m3u8", "destination": "/api/play.m3u8" },
+    { "source": "/ts/:segment*", "destination": "/api/ts" }
   ]
 }
