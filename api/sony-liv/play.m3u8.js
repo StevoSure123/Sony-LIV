@@ -1,59 +1,33 @@
 export default async function handler(req, res) {
   try {
-    const { id } = req.query;
+    const { segment } = req.query;
 
-    // Check if 'id' parameter is present
-    if (!id) {
-      res.status(400).json({ error: "Missing 'id' query parameter." });
+    if (!segment) {
+      res.status(400).json({ error: "Missing 'segment' query parameter." });
       return;
     }
 
-    const originalUrl = `https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id}`;
+    const originalSegmentUrl = `https://fifabd.xyz/KIDxRANAPKs/${segment}`;
 
-    // Fetch the M3U8 playlist from the original URL
-    const response = await fetch(originalUrl, {
+    const response = await fetch(originalSegmentUrl, {
       headers: {
-        Referer: "RANAPK", // Correct referer to avoid fetch blocking
+        Referer: "RANAPK",
       },
     });
 
-    // If the fetch fails
     if (!response.ok) {
       res.status(response.status).json({
-        error: `Failed to fetch M3U8 from original URL: ${response.statusText}`,
+        error: `Failed to fetch TS segment from original URL: ${response.statusText}`,
       });
       return;
     }
 
-    // Parse the M3U8 data as text
-    const m3u8Data = await response.text();
-
-    // Optimize CORS and caching headers
+    // Pipe the .ts segment to the client
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-    res.setHeader("Cache-Control", "public, max-age=5"); // Cache for 5 seconds for better performance
-
-    // Preload related media segments (for reducing buffering)
-    const preloadedSegments = m3u8Data
-      .split("\n")
-      .filter(line => line.endsWith(".ts")) // Fetch .ts files
-      .map(segmentUrl =>
-        fetch(new URL(segmentUrl, originalUrl).toString(), {
-          headers: { Referer: "RANAPK" },
-        }).catch(err => console.error("Preload error:", err))
-      );
-
-    // Wait for preloading to complete (non-blocking)
-    Promise.all(preloadedSegments)
-      .then(() => console.log("Segments preloaded"))
-      .catch(err => console.error("Error preloading segments:", err));
-
-    // Send the M3U8 playlist as the response
-    res.status(200).send(m3u8Data);
+    res.setHeader("Content-Type", "video/mp2t");
+    response.body.pipe(res);
   } catch (error) {
-    console.error("Error in M3U8 handler:", error);
+    console.error("Error in TS segment handler:", error);
     res.status(500).json({ error: "Internal server error." });
   }
 }
