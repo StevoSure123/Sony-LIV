@@ -3,38 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3U8 Player</title>
+    <title>DASH Stream Player</title>
     <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
 </head>
 <body>
     <div id="player" style="width: 100%; height: 100%;"></div>
-    <script>
-        // Original URL with proxy
-        var original_url = "https://allinonereborn.com/dd.m3u8?id=864";
-        var proxy_url = "https://thingproxy.freeboard.io/fetch/";
-        var proxied_url = original_url;
 
-        // Setup JW Player
+    <script>
+        // DASH manifest URL
+        var manifestUrl = "https://bpweb3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/manifest.mpd";
+
+        // ClearKey DRM keys
+        var keyId = "dkmQ7qvVUie+9a/fm5pmJw"; // Base64-encoded Key ID
+        var key = "x0/9GdDFkcdqDdj285MO5A";   // Base64-encoded Key
+
+        // Headers for the request
+        var customHeaders = {
+            cookie: "hdntl=exp=1717991535~acl=%2f*~data=hdntl~hmac=cf7287ac9b742d265d620a90201707647722cf05948c4dad7db09ac41f5e7736",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+        };
+
+        // Initialize JW Player
         jwplayer("player").setup({
             playlist: [{
                 sources: [{
-                    file: proxied_url
+                    file: manifestUrl,
+                    drm: {
+                        clearkey: {
+                            keyId: keyId,
+                            key: key
+                        }
+                    }
                 }]
             }],
-            autostart: true,
             width: "100%",
             height: "100%",
+            autostart: true,
             stretching: "exactfit",
-            aspectratio: "16:9",
-            cast: {}, // Enable Chromecast
-            abouttext: "Video Player",
-            aboutlink: "#"
+            aspectratio: "16:9"
         });
 
-        // Error handling
-        jwplayer("player").on('error', function(e) {
-            console.error("Player error:", e.message);
-            alert("Failed to load the video. Please check the URL and try again.");
+        // Apply custom headers
+        jwplayer("player").on('beforePlay', function() {
+            jwplayer("player").setConfig({
+                xhrSetup: function(xhr) {
+                    // Add headers to the XHR request
+                    for (var header in customHeaders) {
+                        xhr.setRequestHeader(header, customHeaders[header]);
+                    }
+                }
+            });
         });
     </script>
 </body>
