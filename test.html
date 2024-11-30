@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protected Video Stream</title>
-    <!-- Include the JW Player library -->
-    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <title>Play M3U8 Stream</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.19/dist/hls.min.js"></script>
 </head>
 <body>
 
-<div id="player" style="width: 100%; height: 100%;"></div>
+<video id="video" width="100%" height="100%" controls></video>
 
 <script>
-// The URL for the DRM-protected stream (manifest URL for MPEG-DASH or HLS)
-var manifestUrl = "https://bpweb3.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/manifest.mpd";
+  // Check if the browser supports HLS.js
+  if (Hls.isSupported()) {
+      var video = document.getElementById('video');
+      var hls = new Hls();
+      
+      // Provide the m3u8 stream URL
+      hls.loadSource('http://119.156.26.155:8000/play/a05u/index.m3u8');
+      hls.attachMedia(video);
+      
+      // Once HLS is attached to the video element, play it
+      hls.on(Hls.Events.MANIFEST_LOADED, function () {
+          video.play();
+      });
 
-// DRM keys and license
-var keyId = "dkmQ7qvVUie+9a/fm5pmJw";  // Replace with your correct Key ID
-var key = "x0/9GdDFkcdqDdj285MO5A";   // Replace with your correct Key
-
-// Custom headers (cookies, User-Agent, etc.)
-var customHeaders = {
-    cookie: "hdntl=exp=1717991535~acl=%2f*~data=hdntl~hmac=cf7287ac9b742d265d620a90201707647722cf05948c4dad7db09ac41f5e7736",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-};
-
-// Set up JW Player for the protected stream
-jwplayer("player").setup({
-    playlist: [{
-        sources: [{
-            file: manifestUrl,
-            drm: {
-                clearkey: {
-                    keyId: keyId,
-                    key: key
-                }
-            }
-        }]
-    }],
-    width: "100%",
-    height: "100%",
-    autostart: true,
-    stretching: "exactfit",
-    aspectratio: "16:9"
-});
-
-// Ensure custom headers are passed when the player makes requests
-jwplayer("player").on('beforePlay', function() {
-    jwplayer("player").setConfig({
-        xhrSetup: function(xhr) {
-            for (var header in customHeaders) {
-                xhr.setRequestHeader(header, customHeaders[header]);
-            }
-        }
-    });
-});
+      // Handle errors
+      hls.on(Hls.Events.ERROR, function (event, data) {
+          if (data.fatal) {
+              switch (data.type) {
+                  case Hls.ErrorTypes.NETWORK_ERROR:
+                      console.error('A network error occurred');
+                      break;
+                  case Hls.ErrorTypes.MEDIA_ERROR:
+                      console.error('A media error occurred');
+                      break;
+                  case Hls.ErrorTypes.OTHER_ERROR:
+                      console.error('An unknown error occurred');
+                      break;
+                  default:
+                      console.error('A fatal error occurred');
+                      break;
+              }
+          }
+      });
+  } else {
+      console.error('HLS.js is not supported in this browser.');
+  }
 </script>
 
 </body>
