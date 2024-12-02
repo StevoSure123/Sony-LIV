@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       return;
     }
 
-    const originalUrl = `https://fifabd.xyz/KIDxRANAPKs/play.m3u8?id=${id}`;
+    const originalUrl = `https://live.drmlive-02.workers.dev/sliv/id=${id}.m3u8`;
 
     // Fetch the M3U8 playlist from the original URL
     const response = await fetch(originalUrl, {
